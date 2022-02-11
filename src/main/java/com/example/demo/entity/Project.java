@@ -1,6 +1,11 @@
 package com.example.demo.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Project {
+	@Id
 private int bugno;
 private String name;
 private String description;

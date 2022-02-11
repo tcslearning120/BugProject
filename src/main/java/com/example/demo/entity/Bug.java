@@ -1,6 +1,11 @@
 package com.example.demo.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+@Entity
 public class Bug {
+	@Id
+private int bugId;
 private String emailAddress;
 private String owner;
 private String priority;
@@ -14,9 +19,11 @@ private String attachedFile;
 public Bug() {
 
 }
-public Bug(String emailAddress, String owner, String priority, String status, String ownerProject, String createdData,
-		String completionDate, String description, String attachedFile) {
+
+public Bug(int bugId, String emailAddress, String owner, String priority, String status, String ownerProject,
+		String createdData, String completionDate, String description, String attachedFile) {
 	super();
+	this.bugId = bugId;
 	this.emailAddress = emailAddress;
 	this.owner = owner;
 	this.priority = priority;
@@ -27,6 +34,7 @@ public Bug(String emailAddress, String owner, String priority, String status, St
 	this.description = description;
 	this.attachedFile = attachedFile;
 }
+
 public String getEmailAddress() {
 	return emailAddress;
 }
